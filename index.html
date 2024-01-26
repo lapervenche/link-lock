@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <title>Link Lock - Password-protect links</title>
+  <title>Liens protégés par mot de passe</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" type="text/css" />
@@ -25,32 +25,30 @@
   <!-- Explanation for those who do not have JavaScript enabled -->
   <noscript>
   <div class="red-border">
-    <p>If you are seeing this, it means that you have JavaScript disabled. Please enable JavaScript to access the locked link.</p>
-
-    <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
-
-    <p>If you still want to run the application, I encourage you to clone the <a href="https://github.com/jstrieb/link-lock">source code on GitHub</a>. That way you can disable JavaScript only for trusted files on your local machine.</p>
+    <p> Si vous voyez cela, cela signifie que JavaScript est désactivé. En conséquence, l'application ne fonctionnera pas correctement pour vous. Par exemple, aucun des boutons ne fonctionnera. </p>
+    <p> Cette application est entièrement programmée en JavaScript. Cela a été fait intentionnellement, de sorte que tout cryptage et décryptage se produisent côté client. Cela signifie que le code s'exécute en tant qu'application distribuée, en s'appuyant uniquement sur les pages GitHub pour l'infrastructure. Cela signifie également qu'aucune donnée sur les liens verrouillés n'est jamais stockée sur un serveur. Le code est conçu pour être vérifiable afin que les utilisateurs puissent étudier ce qui se passe dans les coulisses. </p>
+    <p><p> Si vous souhaitez toujours exécuter l'application, je vous encourage à cloner le <a href="lapervenche.github.io/link-lock/">code source sur GitHub</a>De cette façon, vous pouvez désactiver JavaScript uniquement pour les fichiers de confiance sur votre machine locale.</p>
   </div>
   </noscript>
 
   <div class="form" style="display: none">
-    <p>Please enter the password to unlock the link.</p>
+    <p>Veuillez saisir le mot de passe pour déverrouiller le lien.</p>
     <p id="hint"></p>
 
     <hr />
 
-    <label for="password">password</label>
+    <label for="password">Mot de passe</label>
     <input type="password" id="password" autofocus />
-    <button id="unlockbutton">Unlock link</button>
+    <button id="unlockbutton">Déverrouiller le lien.</button>
   </div>
 
   <!-- Display errors in a big red box -->
   <div class="error red-border" style="display: none">
-    <p id="errortext">Error</p>
-    <button onclick="main()">Try again</button>
-    <a href="https://jstrieb.github.io/link-lock"><button>Lock a link</button></a>
-    <a href="https://jstrieb.github.io/link-lock/decrypt/" id="no-redirect" target="_blank"><button>Decrypt without redirect</button></a>
-    <a href="https://jstrieb.github.io/link-lock/hidden/" id="hidden" target="_blank"><button>Create hidden bookmark</button></a>
+    <p id="errortext">Erreur</p>
+    <button onclick="main()">Essayer à nouveau</button>
+    <a href="https://lapervenche.github.io/link-lock"><button>Verrouiller un lien</button></a>
+    <a href="https://lapervenche.github.io/link-lock/decrypt/" id="no-redirect" target="_blank"><button>Décrypter sans redirection</button></a>
+    <a href="https://lapervenche.github.io/link-lock/hidden/" id="hidden" target="_blank"><button>Créer un signet caché</button></a>
   </div>
 </body>
 
