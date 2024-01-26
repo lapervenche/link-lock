@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
-  <title>Brute Force Link Lock</title>
+  <title>Verrouillage de liaison de force brute</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="../style.css" type="text/css" />
@@ -28,27 +28,25 @@
   <!-- Explanation for those who do not have JavaScript enabled -->
   <noscript>
   <div style="border: 3px solid red; padding: 2em;">
-    <p>If you are seeing this, it means that you have JavaScript disabled. As a result, the application will not work properly for you. For example, none of the buttons will work.</p>
-
-    <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side. This means the code runs as a distributed application, relying only on GitHub Pages for infrastructure. It also means that no data about locked links is ever stored on a server. The code is designed to be auditable so users can investigate what is happening behind the scenes.</p>
-
-    <p>If you still want to run the application, I encourage you to clone the <a href="https://github.com/jstrieb/link-lock">source code on GitHub</a>. That way you can disable JavaScript only for trusted files on your local machine.</p>
+    <p> Si vous voyez cela, cela signifie que JavaScript est désactivé. En conséquence, l'application ne fonctionnera pas correctement pour vous. Par exemple, aucun des boutons ne fonctionnera. </p>
+    <p> Cette application est entièrement programmée en JavaScript. Cela a été fait intentionnellement, de sorte que tout cryptage et décryptage se produisent côté client. Cela signifie que le code s'exécute en tant qu'application distribuée, en s'appuyant uniquement sur les pages GitHub pour l'infrastructure. Cela signifie également qu'aucune donnée sur les liens verrouillés n'est jamais stockée sur un serveur. Le code est conçu pour être vérifiable afin que les utilisateurs puissent étudier ce qui se passe dans les coulisses. </p>
+    <p> Si vous souhaitez toujours exécuter l'application, je vous encourage à cloner le <a href="https://github.com/lapervenche/link-lock/">code source sur GitHub</a>De cette façon, vous pouvez désactiver JavaScript uniquement pour les fichiers de confiance sur votre machine locale.</p>
   </div>
   </noscript>
 
   <!-- Introduction -->
-  <h1>Brute Force Link Lock URLs</h1>
-  <p>"Brute forcing" a password is the act of guessing it by brute force – literally trying all passwords until one works. This page is a simple, proof-of-concept brute force application. It is designed to decrypt <a href="https://github.com/jstrieb/link-lock" target="_blank">Link Lock</a> URLs by trying every single possible password. It is not optimized in any way, and does minimal error-checking.</p>
-  <p>For more information about brute forcing Link Lock URLs, read the open <a href="https://github.com/jstrieb/link-lock/issues/1" target="_blank">GitHub issue</a> about it.</p>
-  <p>For a command-line brute force application that performs parallel processing using all cores of the CPU, check out <a href="https://github.com/jstrieb/bruteforce-link-lock">this project</a>.</p>
+  <h1> URL de verrouillage de liaison de force brute </h1>
+  <p>"Forcing brute" Un mot de passe est l'acte de le deviner par force brute - essayant littéralement tous les mots de passe jusqu'à ce que l'on fonctionne. Cette page est une simple application de force brute de preuve de concept.<a href="https://github.com/jstrieb/link-lock" target="_blank"> Link Lock</a> est conçu pour décrypter une URL en essayant chaque mot de passe possible. Il n'est pas optimisé de quelque manière que ce soit et fait un minimum de vérification des erreurs.</p>
+  <p>Pour plus d'informations sur les URL de verrouillage des liens de forçage brute, lisez le problème ouvert  <a href="https://github.com/jstrieb/link-lock/issues/1" target="_blank">Voir les problèmes sur GitHub</a>  à ce sujet. </p></p>
+  <p>Pour une application de force brute en ligne de commande qui effectue un traitement parallèle à l'aide de tous les noyaux du CPU, consultez <a href="https://github.com/jstrieb/bruteforce-link-lock">ce projet</a>.</p>
 
   <hr />
 
   <!-- Main form -->
   <div class="form">
-    <label for="charset">charset</label>
+    <label for="charset">Caractère</label>
     <input type="text" id="charset" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" />
-    <label for="encrypted-url">encrypted url</label>
+    <label for="encrypted-url">URL cryptée</label>
     <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
     <button onclick="onBruteForce()">Brute Force</button>
     <p class="alert">INVISIBLE</p>
@@ -58,14 +56,15 @@
 
   <!-- Output area -->
   <div class="output">
-    <label for="output">brute-forced password</label>
+    <label for="output">Mot de passe forcé par brute</label>
     <input type="text" id="output" />
   </div>
 
   <!-- Page footer -->
   <footer>
   <hr />
-  <p class="copyright">Created by <a href="https://jstrieb.github.io">Jacob Strieb</a>.</p>
+  <p class="copyright">Version française par  <a href="https://github.com/lapervenche/link-lock">lapervenche</a>.</p>
+  <p class="copyright">Crée par  <a href="https://github.com/jstrieb/link-lock">Jacob Strieb</a>.</p>
   </footer>
 </body>
 
