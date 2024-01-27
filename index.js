@@ -1,7 +1,7 @@
 function error(text) {
   document.querySelector(".form").style.display = "none";
   document.querySelector(".error").style.display = "inherit";
-  document.querySelector("#errortext").innerText = `Error: ${text}`;
+  document.querySelector("#errortext").innerText = `Oups !!! <br /> une erreur c'est produite: ${text}`;
 }
 
 // Run when the <body> loads
