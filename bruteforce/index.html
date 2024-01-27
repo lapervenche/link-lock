@@ -44,11 +44,12 @@
 
   <!-- Main form -->
   <div class="form">
-    <label for="charset">Caractère</label>
+    <label for="charset">Caractères recherchés</label>
     <input type="text" id="charset" value="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" />
     <label for="encrypted-url">URL cryptée</label>
     <input type="url" id="encrypted-url" oninput="document.querySelector('.alert').style.opacity = 0" />
-    <button onclick="onBruteForce()">Brute Force</button>
+    <button onclick="onBruteForce()">Trouver le mot de passe</button>
+    <button onclick="history.go(0)">Stopper & Rafraîchir la page </button>
     <p class="alert">INVISIBLE</p>
   </div>
 
