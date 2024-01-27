@@ -15,11 +15,11 @@ function main() {
 
     // Fail if the b64 library or API was not loaded
     if (!("b64" in window)) {
-      error("Base64 library not loaded.");
+      error("Bibliothèque Base64 non chargée.");
       return;
     }
     if (!("apiVersions" in window)) {
-      error("API library not loaded.");
+      error("Bibliothèque API non chargée.");
       return;
     }
 
@@ -29,19 +29,19 @@ function main() {
     try {
       params = JSON.parse(b64.decode(hash));
     } catch {
-      error("The link appears corrupted.");
+      error("Le lien semble corrompu.");
       return;
     }
 
     // Check that all required parameters encoded in the URL are present
     if (!("v" in params && "e" in params)) {
-      error("The link appears corrupted. The encoded URL is missing necessary parameters.");
+      error("Le lien semble corrompu. L'URL est codée il manque des paramètres nécessaires.");
       return;
     }
 
     // Check that the version in the parameters is valid
     if (!(params["v"] in apiVersions)) {
-      error("Unsupported API version. The link may be corrupted.");
+      error("Version API non prise en charge. Le lien peut être corrompu.");
       return;
     }
 
@@ -74,7 +74,7 @@ function main() {
         url = await api.decrypt(encrypted, password, salt, iv);
       } catch {
         // Password is incorrect.
-        error("Password is incorrect.");
+        error("Le mot de passe est incorrect.");
 
         // Set the "decrypt without redirect" URL appropriately
         document.querySelector("#no-redirect").href =
@@ -106,7 +106,7 @@ function main() {
         // the unlocked destination. This is dangerous information leakage.
         window.location.href = url;
       } catch {
-        error("A corrupted URL was encrypted. Cannot redirect.");
+        error("Une URL corrompue a été cryptée. Ne peut pas être redirigé.");
         console.log(url);
         return;
       }
