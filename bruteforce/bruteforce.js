@@ -6,11 +6,11 @@ function error(text) {
 
 function onBruteForce() {
   if (!("importKey" in window.crypto.subtle)) {
-    error("window.crypto not loaded. Please reload over https");
+    error("window.crypto non chargé. S'il vous plaît recharger sur https");
     return;
   }
   if (!("b64" in window && "apiVersions" in window)) {
-    error("Important libraries not loaded!");
+    error("Bibliothèques importantes non chargées!");
     return;
   }
 
@@ -19,7 +19,7 @@ function onBruteForce() {
   try {
     url = new URL(urlText);
   } catch {
-    error("Entered text is not a valid URL. Make sure it includes \"https://\" too!");
+    error("Le texte entré n'est pas une URL valide. Assurez-vous qu'il comprend \"https://\" aussi!");
     return;
   }
 
@@ -27,17 +27,17 @@ function onBruteForce() {
   try {
     params = JSON.parse(b64.decode(url.hash.slice(1)));
   } catch {
-    error("The link appears corrupted.");
+    error("Le lien semble corrompu.");
     return;
   }
 
   if (!("v" in params && "e" in params)) {
-    error("The link appears corrupted. The encoded URL is missing necessary parameters.");
+    error("Le lien semble corrompu. L'URL est codée et il manque des paramètres nécessaires.");
     return;
   }
 
   if (!(params["v"] in apiVersions)) {
-    error("Unsupported API version. The link may be corrupted.");
+    error("Version API non prise en charge. Le lien peut être corrompu.");
     return;
   }
 
@@ -49,7 +49,7 @@ function onBruteForce() {
 
   const cset = document.querySelector("#charset").value.split("");
   if (charset == "") {
-    error("Charset cannot be empty.");
+    error("Caractères recherchés ne peux pas être vide.");
     return;
   }
 
@@ -70,7 +70,7 @@ function onBruteForce() {
         await api.decrypt(encrypted, prefix, salt, iv);
         document.querySelector("#output").value = prefix;
         progress.done = true;
-        error("Completed!");
+        error("Complété!");
       } catch {}
       return;
     }
@@ -86,7 +86,7 @@ function onBruteForce() {
       return;
     }
     let delta = performance.now() - progress.startTime;
-    error(`Trying ${progress.total} passwords of length ${progress.len} – ${Math.round(100000 * progress.tried / progress.total)/1000}% complete. Testing ${Math.round(1000000 * (progress.overallTotal + progress.tried) / delta)/1000} passwords per second.`);
+    error(`Essai de ${progress.total} mots de passe de longueur ${progress.len} – ${Math.round(100000 * progress.tried / progress.total)/1000}% complété. Test de ${Math.round(1000000 * (progress.overallTotal + progress.tried) / delta)/1000} mots de passe par seconde.`);
   }
 
   (async () => {
